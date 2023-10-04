@@ -1,14 +1,15 @@
 'use strict';
 
+import { Configuration, PlaidApi, Products, PlaidEnvironments } from 'plaid';
+import { v4 as uuidv4 } from 'uuid';
+import express from 'express';
+import bodyParser from 'body-parser';
+import moment from 'moment';
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 // read env vars from .env file
-require('dotenv').config();
-const { Configuration, PlaidApi, Products, PlaidEnvironments} = require('plaid');
-const util = require('util');
-const { v4: uuidv4 } = require('uuid');
-const express = require('express');
-const bodyParser = require('body-parser');
-const moment = require('moment');
-const cors = require('cors');
 
 const APP_PORT = process.env.APP_PORT || 8000;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
