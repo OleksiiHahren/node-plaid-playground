@@ -70,7 +70,7 @@ const configuration = new Configuration({
 });
 
 const client = new PlaidApi(configuration);
-
+console.log(client, 'client here!')
 const app = express();
 app.use(
   bodyParser.urlencoded({
