@@ -80,6 +80,12 @@ app.use(
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', function (request, response, next) {
+  response.send({
+    message: 'Hello world!'
+  })
+  response.status(200);
+});
 app.post('/api/info', function (request, response, next) {
   response.json({
     item_id: ITEM_ID,
